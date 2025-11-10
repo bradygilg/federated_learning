@@ -1,0 +1,16 @@
+schema: '2.0'
+stages:
+  download_data:
+    cmd: python ../../../Scripts/Data/download_MNIST.py --output 
+      ../../../Data/Raw/MNIST/MNIST
+    deps:
+    - path: ../../../Scripts/Data/download_MNIST.py
+      hash: md5
+      md5: 65c43de919b2b9079f99f295e85631e3
+      size: 577
+    outs:
+    - path: ../../../Data/Raw/MNIST/MNIST
+      hash: md5
+      md5: ab3353d41bd7a24a20a31f29b64e3b3c.dir
+      size: 66544770
+      nfiles: 8
