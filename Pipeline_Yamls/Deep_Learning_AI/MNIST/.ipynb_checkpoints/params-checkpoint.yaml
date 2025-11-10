@@ -5,6 +5,7 @@ project_name: 'MNIST'
 
 ## Pipeline parameters determine which methods are used in each stage.
 pipeline:
+    data_list: ['Full']
     processor_list: ['Regressionalize', 'Lag', 'Diff', 'Custom_Transform', 'Custom_Transform_Three_Diffs']
     secondary_processor_list: ['Regressionalize']
     model_list: ['LinearRegressor', 'PytorchNeuralNetworkRegressor']

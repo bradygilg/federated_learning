@@ -9,15 +9,17 @@ stages:
         outs:
             - ${root}/Data/Raw/${project_name}/MNIST
             
-    # prepare_data:
-    #     matrix:
-    #         data: ${pipeline.data_list}
-    #     cmd: python ${root}/Scripts/Data/${item.data}.py 
-    #          --output ${root}/Data/Raw/${project_name}/${item.data}/data.parquet
-    #     deps:
-    #         - ${root}/Scripts/Data/${item.data}.py
-    #     outs:
-    #         - ${root}/Data/Raw/${project_name}/${item.data}/data.parquet
+    prepare_data:
+        matrix:
+            data: ${pipeline.data_list}
+        cmd: python ${root}/Scripts/Data/${item.data}.py 
+             --input ${root}/Data/Raw/${project_name}/MNIST
+             --output ${root}/Data/Raw/${project_name}/${item.data}/data.pkl
+        deps:
+            - ${root}/Scripts/Data/${item.data}.py 
+            - ${root}/Data/Raw/${project_name}/MNIST
+        outs:
+            - ${root}/Data/Raw/${project_name}/${item.data}/data.pkl
 
     # # This download requires a Kaggle account and an authentication JSON. See https://www.kaggle.com/docs/api
     # # Approximately 12 GB

@@ -14,3 +14,22 @@ stages:
       md5: ab3353d41bd7a24a20a31f29b64e3b3c.dir
       size: 66544770
       nfiles: 8
+  prepare_data@Full:
+    cmd: python ../../../Scripts/Data/Full.py --input 
+      ../../../Data/Raw/MNIST/MNIST --output 
+      ../../../Data/Raw/MNIST/Full/data.pkl
+    deps:
+    - path: ../../../Data/Raw/MNIST/MNIST
+      hash: md5
+      md5: ab3353d41bd7a24a20a31f29b64e3b3c.dir
+      size: 66544770
+      nfiles: 8
+    - path: ../../../Scripts/Data/Full.py
+      hash: md5
+      md5: 9f85460839a8c871cb3c90c5dc96df60
+      size: 903
+    outs:
+    - path: ../../../Data/Raw/MNIST/Full/data.pkl
+      hash: md5
+      md5: 65c20f8034f9b2779dc61f424571189a
+      size: 47521515
